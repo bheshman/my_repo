@@ -1,0 +1,28 @@
+create a ec2 instance in compute service of aws
+ec2 - elastic cloud computing
+then launch instance add os , key pair -When you launch an Amazon EC2 instance (basically a virtual server), you need a key pair for security. It's like having a special lock and key.
+
+The key pair has two parts:
+
+Public Key: This is like the lock that's on your EC2 instance. It's safe to share this key because it only allows people with the corresponding "private key" to access your instance.
+
+Private Key: This is your unique key that only you should keep. It's used to unlock the "lock" on your EC2 instance. Never share this key with others!
+then creat key pair with some name as given in rules and then selt key pair format ex rsa and ED25519 in aws then select private key putty or pem then key will be downloaded
+check your network settings and configure storage launch an instance 
+Now deploy jenkins on aws - download softwares like putty or mobaxtreme if it is windows 
+then with public ip of ec2 instance and your os name called username and private key pair downloaded launch a terminal
+first java installation sudo apt update
+sudo apt install fontconfig openjdk-17-jre
+java -version
+openjdk version "17.0.8" 2023-07-18
+OpenJDK Runtime Environment (build 17.0.8+7-Debian-1deb12u1)
+OpenJDK 64-Bit Server VM (build 17.0.8+7-Debian-1deb12u1, mixed mode, sharing)
+then jenkins installation in ubuntu [sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+sudo dnf upgrade
+# Add required dependencies for the jenkins package
+sudo dnf install fontconfig java-17-openjdk
+sudo dnf install jenkins
+sudo systemctl daemon-reload]
+http://publicipaddres:8080/ for this check security groups inbound and out bound rules and then jenkins will display a path for password creation
