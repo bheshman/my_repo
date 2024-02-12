@@ -1,0 +1,36 @@
+Certainly! Let's cover each of these topics:
+
+### 1. What is NACL?
+- NACL stands for Network Access Control List.
+- It is a stateless firewall that operates at the subnet level within a VPC.
+- NACLs are numbered and evaluated in order, with lower numbered rules taking precedence over higher numbered rules.
+- They control traffic entering and exiting subnets based on defined rules, allowing or denying traffic based on source and destination IP addresses and ports.
+
+### 2. Security Groups (SG) and Inbound (IB) Traffic vs. Outbound (OB) Traffic:
+- Security Groups are stateful firewalls that operate at the instance level.
+- They control inbound and outbound traffic for instances associated with them.
+- Inbound traffic refers to traffic coming into the instance from external sources.
+- Outbound traffic refers to traffic leaving the instance to external destinations.
+
+### 3. What AWS Does and What Dev Engineers Should Do with NACLs and Security Groups:
+- AWS automatically provides default NACLs and Security Groups for each VPC.
+- Dev engineers should configure custom NACLs and Security Groups according to their application's specific security requirements.
+- They should define rules that allow necessary traffic for the application to function while blocking unauthorized access.
+
+### 4. NACL vs. SG: Why They Are Used
+- NACLs provide subnet-level security by filtering traffic at the network level, whereas Security Groups provide instance-level security by filtering traffic at the instance level.
+- NACLs are stateless and evaluate rules in sequential order, while Security Groups are stateful and evaluate rules bidirectionally.
+
+### 5. Allow and Deny Rules:
+- **Allow Rules**: Allow specified traffic to pass through.
+- **Deny Rules**: Explicitly block specified traffic from passing through.
+- Both NACLs and Security Groups use allow and deny rules to control traffic flow.
+- It's important to carefully define and prioritize these rules to ensure the desired security posture.
+
+#### Example Allow Rule:
+- Allow inbound HTTP traffic (TCP port 80) from any source to instances in the web server Security Group.
+
+#### Example Deny Rule:
+- Deny all inbound SSH traffic (TCP port 22) from any source to instances in the database server Security Group.
+
+This comprehensive understanding of NACLs and Security Groups should help in effectively managing network security within AWS environments.
