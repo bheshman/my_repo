@@ -1,6 +1,5 @@
 Certainly! Here's a set of notes on Amazon Route 53 concepts that you can use as a reference or copy to GitHub:
 
----
 
 # Amazon Route 53 Concepts
 
